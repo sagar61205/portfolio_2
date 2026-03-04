@@ -3,23 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sagar Virmani - Data Scientist</title>
+  <title>Sagar Virmani - Senior Data Scientist</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       line-height: 1.6;
       color: #333;
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 20px;
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       background-attachment: fixed;
+      padding: 20px;
     }
 
     .container {
@@ -28,96 +23,76 @@
       padding: 40px;
       box-shadow: 0 20px 40px rgba(0,0,0,0.1);
       margin: 20px auto;
-      width: 100%;
+      max-width: 1000px;
     }
 
+    /* ── NAV ── */
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #eee;
+      margin-bottom: 32px;
+    }
+    .nav .logo {
+      font-weight: 700;
+      font-size: 1.1rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-decoration: none;
+    }
+    .nav .back {
+      color: #667eea;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .nav .back:hover { text-decoration: underline; }
+
+    /* ── HERO ── */
     .hero {
       text-align: center;
-      padding: 40px 10px;
+      padding: 32px 10px 40px;
     }
-
+    .hero .badge {
+      display: inline-block;
+      background: #e3f2fd;
+      color: #1976d2;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 18px;
+    }
     .hero h1 {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      margin-bottom: 10px;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 14px;
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-
-    .hero p {
-      font-size: clamp(1rem, 2.5vw, 1.3rem);
+    .hero .subtitle {
       color: #666;
-      margin-bottom: 20px;
+      font-size: 1.05rem;
+      max-width: 680px;
+      margin: 0 auto 24px;
     }
-
-    .badges {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-    }
-
-    .badges a img {
-      height: 40px;
-    }
-
-    .section {
-      margin: 40px 0;
-      padding: 0 10px;
-    }
-
-    .section h2 {
-      color: #2c3e50;
-      margin-bottom: 20px;
-      border-left: 5px solid #667eea;
-      padding-left: 15px;
-      font-size: clamp(1.5rem, 3vw, 2rem);
-    }
-
-    /* Responsive Table Wrapper */
-    .table-container {
-      overflow-x: auto;
-      margin: 20px 0;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      min-width: 600px;
-    }
-
-    th, td {
-      padding: 12px 15px;
-      text-align: left;
-      border-bottom: 1px solid #ddd;
-    }
-
-    th {
-      background: #f8f9fa;
-      font-weight: 600;
-    }
-
-    .project {
-      background: #f8f9fa;
-      padding: 20px;
-      border-radius: 10px;
-      margin: 20px 0;
-      border-left: 4px solid #667eea;
-    }
-
-    .project h3 {
-      color: #2c3e50;
-      margin-bottom: 10px;
-      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
-    }
-
     .tech-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin: 15px 0;
+      justify-content: center;
+      margin: 0 auto;
     }
-
     .tech-tag {
       background: #e3f2fd;
       color: #1976d2;
@@ -127,347 +102,614 @@
       font-weight: 500;
     }
 
+    /* ── SECTION HEADINGS ── */
+    .section { margin: 40px 0; }
+    .section h2 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+      border-left: 5px solid #667eea;
+      padding-left: 15px;
+      font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    }
+
+    /* ── STATUS BAR ── */
+    .status-bar {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-left: 4px solid #16a34a;
+      border-radius: 8px;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+    .status-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: #16a34a;
+      box-shadow: 0 0 6px rgba(22,163,74,0.5);
+      animation: pulse 2s infinite;
+      flex-shrink: 0;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+    .status-text { font-size: 0.88rem; color: #15803d; font-weight: 600; }
+    .status-sub  { font-size: 0.8rem; color: #666; margin-top: 2px; }
+
+    /* ── METRICS STRIP ── */
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    .metric-card {
+      background: #f8f9fa;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      border-left: 4px solid #667eea;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .metric-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(102,126,234,0.15); }
+    .metric-card .val {
+      font-size: 1.9rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .metric-card .label { font-size: 0.8rem; color: #666; font-weight: 500; }
+
+    /* ── PROSE BLOCKS ── */
+    .prose { color: #555; margin-bottom: 14px; }
+
+    /* bullet lists inside cards */
+    .bullet-list {
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 0;
+    }
+    .bullet-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      font-size: 0.85rem;
+      color: #555;
+      line-height: 1.6;
+      padding: 5px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .bullet-list li:last-child { border-bottom: none; }
+    .bullet-list li::before {
+      content: "\2192";
+      color: #667eea;
+      font-weight: 700;
+      flex-shrink: 0;
+      font-size: 0.82rem;
+      margin-top: 2px;
+    }
+
+    /* ── ARCHITECTURE ── */
+    .arch-box {
+      background: #f8f9fa;
+      border-radius: 10px;
+      padding: 28px 20px;
+      overflow-x: auto;
+      border-left: 4px solid #667eea;
+    }
+    .arch-flow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      min-width: 680px;
+    }
+    .arch-node {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 12px 14px;
+      text-align: center;
+      min-width: 105px;
+      flex-shrink: 0;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .arch-node:hover { border-color: #667eea; box-shadow: 0 2px 8px rgba(102,126,234,0.15); }
+    .arch-node .icon { font-size: 1.4rem; margin-bottom: 5px; }
+    .arch-node .node-title { font-size: 0.75rem; font-weight: 600; color: #2c3e50; }
+    .arch-node .node-sub   { font-size: 0.65rem; color: #888; margin-top: 3px; }
+    .arch-node.accent { border-color: #667eea; background: #f5f3ff; }
+    .arch-arrow { color: #aaa; font-size: 1.2rem; padding: 0 4px; flex-shrink: 0; }
+    .arch-chip {
+      display: block;
+      background: #fff3e0;
+      border: 1px solid #fed7aa;
+      border-radius: 5px;
+      padding: 2px 7px;
+      font-size: 0.63rem;
+      color: #c2410c;
+      white-space: nowrap;
+      margin-bottom: 3px;
+    }
+    .arch-note {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid #e5e7eb;
+      font-size: 0.82rem;
+      color: #888;
+      text-align: center;
+    }
+    .arch-note strong { color: #2c3e50; }
+
+    /* ── CHALLENGE / SOLUTION TABLE ── */
+    .table-container { overflow-x: auto; margin: 4px 0; }
+    table { width: 100%; border-collapse: collapse; min-width: 560px; }
+    th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #ddd; }
+    th { background: #f8f9fa; font-weight: 600; color: #2c3e50; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: #fafafa; }
+
+    /* ── CHALLENGE → SOLUTION CARDS ── */
+    .cs-list { display: flex; flex-direction: column; gap: 16px; }
+    .cs-item {
+      background: #f8f9fa;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #eee;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .cs-item:hover { box-shadow: 0 4px 12px rgba(102,126,234,0.12); transform: translateY(-1px); }
+    .cs-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+    .cs-challenge {
+      padding: 18px 20px;
+      border-right: 1px solid #e5e7eb;
+    }
+    .cs-solution {
+      padding: 18px 20px;
+      background: white;
+    }
+    .cs-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .cs-label.challenge-label { color: #9333ea; }
+    .cs-label.solution-label  { color: #667eea; }
+    .cs-text { font-size: 0.87rem; color: #444; line-height: 1.6; }
+    @media (max-width: 640px) {
+      .cs-row { grid-template-columns: 1fr; }
+      .cs-challenge { border-right: none; border-bottom: 1px solid #e5e7eb; }
+    }
+
+    /* ── INNOVATION / IMPACT CARDS ── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background: #f8f9fa;
+      border-radius: 10px;
+      padding: 20px;
+      border-left: 4px solid #667eea;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(102,126,234,0.12); }
+    .card.v2 { border-left-color: #764ba2; }
+    .card h4 { font-size: 0.92rem; font-weight: 700; color: #2c3e50; margin-bottom: 8px; }
+    .card p  { font-size: 0.85rem; color: #555; line-height: 1.6; }
+
+    /* ── STACK GRID ── */
+    .stack-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+      gap: 12px;
+    }
+    .stack-item {
+      background: #f8f9fa;
+      border-radius: 8px;
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-left: 3px solid #667eea;
+      transition: transform 0.2s;
+    }
+    .stack-item:hover { transform: translateY(-1px); }
+    .stack-item .s-icon { font-size: 1.2rem; }
+    .stack-item .s-name { font-size: 0.85rem; font-weight: 600; color: #2c3e50; }
+    .stack-item .s-role { font-size: 0.72rem; color: #888; }
+
+    /* ── EVAL CARDS ── */
+    .eval-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 12px;
+    }
+    .eval-card {
+      background: #f8f9fa;
+      border-radius: 8px;
+      padding: 14px;
+      border-top: 3px solid #667eea;
+    }
+    .eval-card.v2 { border-top-color: #764ba2; }
+    .eval-card .e-title { font-size: 0.82rem; font-weight: 700; color: #2c3e50; margin-bottom: 6px; }
+    .eval-card .e-desc  { font-size: 0.8rem; color: #666; }
+
+    /* ── DISCLAIMER ── */
+    .disclaimer {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-radius: 8px;
+      padding: 14px 18px;
+      font-size: 0.82rem;
+      color: #666;
+      margin-top: 40px;
+    }
+
+    /* ── BUTTON ── */
     .btn {
       display: inline-block;
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
-      padding: 12px 20px;
+      padding: 12px 24px;
       border-radius: 25px;
       text-decoration: none;
       font-weight: 500;
-      transition: transform 0.3s ease;
-      border: none;
-      cursor: pointer;
       font-size: 0.95rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin-top: 8px;
     }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(102,126,234,0.35); }
 
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .contact-form {
-      background: #f8f9fa;
-      padding: 25px;
-      border-radius: 10px;
-      margin: 20px 0;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 5px;
-      font-weight: 600;
-      color: #2c3e50;
-    }
-
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      padding: 12px;
-      border: 2px solid #e0e0e0;
-      border-radius: 5px;
-      font-size: 1rem;
-      transition: border-color 0.3s ease;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: #667eea;
-    }
-
-    .form-group textarea {
-      height: 120px;
-      resize: vertical;
-    }
-
-    .success-message,
-    .error-message {
-      padding: 15px;
-      border-radius: 5px;
-      margin: 15px 0;
-      display: none;
-    }
-
-    .success-message {
-      background: #d4edda;
-      color: #155724;
-    }
-
-    .error-message {
-      background: #f8d7da;
-      color: #721c24;
-    }
-
-    .direct-email {
-      text-align: center;
-      margin: 20px 0;
-      padding: 15px;
-      background: #e3f2fd;
-      border-radius: 10px;
-    }
-
-    .direct-email a {
-      color: #1976d2;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-    }
-
-    .direct-email a:hover {
-      text-decoration: underline;
-    }
-
+    /* ── FOOTER ── */
     footer {
       text-align: center;
-      padding: 30px 15px;
+      padding: 28px 15px 10px;
       color: #666;
       border-top: 1px solid #eee;
       margin-top: 40px;
       font-size: 0.9rem;
     }
 
-    /* Responsive Queries */
-    @media (max-width: 1024px) {
-      .container {
-        padding: 30px;
-      }
-    }
-
     @media (max-width: 768px) {
-      .container {
-        padding: 20px;
-      }
-
-      .badges a img {
-        height: 35px;
-      }
-
-      table {
-        font-size: 0.85rem;
-      }
+      .container { padding: 24px; }
+      .hero { padding: 20px 0 30px; }
     }
-
     @media (max-width: 480px) {
-      .hero {
-        padding: 20px 5px;
-      }
-
-      .badges {
-        gap: 10px;
-      }
-
-      .btn {
-        width: 100%;
-        text-align: center;
-      }
-
-      .project {
-        padding: 15px;
-      }
+      .container { padding: 16px; }
+      .btn { width: 100%; text-align: center; }
     }
+  
+
+    /* ── ABOUT CARDS ── */
+    .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 20px; }
+    .about-card { background: #f8f9fa; border-radius: 10px; padding: 20px; border-left: 4px solid #667eea; transition: transform 0.2s, box-shadow 0.2s; }
+    .about-card.v2 { border-left-color: #764ba2; }
+    .about-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(102,126,234,0.12); }
+    .about-card h4 { font-size: 0.92rem; font-weight: 700; color: #2c3e50; margin-bottom: 10px; }
+
+    /* ── IMPACT METRICS ── */
+    .impact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(155px, 1fr)); gap: 16px; }
+    .impact-card { background: #f8f9fa; border-radius: 10px; padding: 20px; text-align: center; border-left: 4px solid #667eea; transition: transform 0.2s, box-shadow 0.2s; }
+    .impact-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(102,126,234,0.15); }
+    .impact-card .i-val { font-size: 1.8rem; font-weight: 800; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1; margin-bottom: 6px; }
+    .impact-card .i-label { font-size: 0.78rem; color: #666; font-weight: 500; }
+
+    /* ── PROJECT CARDS ── */
+    .project-card { background: #f8f9fa; border-radius: 10px; padding: 24px; margin-bottom: 20px; border-left: 4px solid #667eea; transition: transform 0.2s, box-shadow 0.2s; }
+    .project-card:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(102,126,234,0.12); }
+    .project-card.v2 { border-left-color: #764ba2; }
+    .project-card h3 { color: #2c3e50; font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; }
+    .project-sub { font-size: 0.83rem; color: #667eea; font-weight: 600; margin-bottom: 14px; }
+    .project-status { display: inline-block; background: #f0fdf4; border: 1px solid #bbf7d0; color: #15803d; font-size: 0.72rem; font-weight: 700; padding: 3px 10px; border-radius: 12px; margin-bottom: 12px; letter-spacing: 0.03em; }
+    .project-status.pre { background: #eff6ff; border-color: #bfdbfe; color: #1d4ed8; }
+    .project-meta { display: flex; flex-direction: column; gap: 7px; margin: 14px 0 18px; }
+    .project-meta-row { font-size: 0.86rem; color: #555; line-height: 1.5; }
+    .project-meta-row strong { color: #2c3e50; }
+
+    /* ── SKILLS ── */
+    .skills-grid { display: flex; flex-direction: column; gap: 16px; }
+    .skill-cat { background: #f8f9fa; border-radius: 10px; padding: 18px 20px; border-left: 4px solid #667eea; }
+    .skill-cat.v2 { border-left-color: #764ba2; }
+    .skill-cat h4 { font-size: 0.9rem; font-weight: 700; color: #2c3e50; margin-bottom: 12px; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .skill-tag { background: white; border: 1px solid #ddd; color: #444; padding: 4px 12px; border-radius: 20px; font-size: 0.81rem; font-weight: 500; transition: border-color 0.2s; }
+    .skill-tag:hover { border-color: #667eea; }
+
+    /* ── CONTACT ── */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .contact-links { display: flex; flex-direction: column; gap: 12px; }
+    .contact-link { background: #f8f9fa; border-radius: 10px; padding: 14px 18px; display: flex; align-items: center; gap: 12px; text-decoration: none; color: #2c3e50; border-left: 4px solid #667eea; transition: transform 0.2s, box-shadow 0.2s; }
+    .contact-link:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(102,126,234,0.12); }
+    .contact-link .c-icon { font-size: 1.3rem; flex-shrink: 0; }
+    .contact-link .c-label { font-size: 0.72rem; color: #888; font-weight: 500; }
+    .contact-link .c-val { font-size: 0.88rem; font-weight: 600; color: #2c3e50; }
+    .contact-form-wrap { background: #f8f9fa; border-radius: 10px; padding: 24px; }
+    .form-group { margin-bottom: 14px; }
+    .form-group label { display: block; margin-bottom: 4px; font-weight: 600; color: #2c3e50; font-size: 0.86rem; }
+    .form-group input, .form-group textarea { width: 100%; padding: 10px 14px; border: 1px solid #ddd; border-radius: 8px; font-size: 0.88rem; font-family: inherit; transition: border-color 0.2s; }
+    .form-group input:focus, .form-group textarea:focus { outline: none; border-color: #667eea; }
+    .form-group textarea { height: 100px; resize: vertical; }
+    .success-msg { background: #f0fdf4; border: 1px solid #bbf7d0; color: #15803d; padding: 12px; border-radius: 8px; margin-bottom: 12px; display: none; font-size: 0.86rem; }
+    .error-msg { background: #fff1f2; border: 1px solid #fecdd3; color: #be123c; padding: 12px; border-radius: 8px; margin-bottom: 12px; display: none; font-size: 0.86rem; }
+
+    footer { text-align: center; padding: 28px 15px 10px; color: #666; border-top: 1px solid #eee; margin-top: 40px; font-size: 0.88rem; }
+    footer a { color: #667eea; text-decoration: none; font-weight: 600; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } .container { padding: 24px; } }
+    @media (max-width: 480px) { .container { padding: 16px; } .btn { width: 100%; text-align: center; display: block; } }
+
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- Hero Section -->
-    <section class="hero">
-      <h1>Sagar Virmani</h1>
-      <p>Data Scientist | GenAI · MLOps · LLM Applications | Production AI → Driving Revenue Growth with Production AI Systems</p>
-      <div class="badges">
-        <a href="https://linkedin.com/in/sagar-virmani/">
-          <img src="https://img.shields.io/badge/💼_LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+<div class="container">
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>Sagar Virmani</h1>
+    <p class="subtitle" style="font-size:clamp(0.95rem,2vw,1.1rem);color:#555;margin-bottom:24px;">
+      Senior Data Scientist &nbsp;&middot;&nbsp; GenAI &amp; LLM Applications &nbsp;&middot;&nbsp; MLOps &nbsp;&middot;&nbsp; Production AI &rarr; Measurable Business Impact
+    </p>
+    <div class="tech-tags" style="justify-content:center;margin-bottom:8px;">
+      <a href="https://linkedin.com/in/sagar-virmani/" target="_blank">
+        <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" style="height:34px;border-radius:6px;">
+      </a>
+      <a href="https://github.com/sagar61205" target="_blank">
+        <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" style="height:34px;border-radius:6px;">
+      </a>
+      <a href="#contact">
+        <img src="https://img.shields.io/badge/Contact_Me-667eea?style=for-the-badge" alt="Contact" style="height:34px;border-radius:6px;">
+      </a>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="section">
+    <h2>&#127775; About Me</h2>
+    <p class="prose">Senior Data Scientist with 4+ years of experience building production ML and GenAI systems that deliver measurable revenue impact. My work spans the full lifecycle: from problem framing and model development through to MLOps infrastructure, LLM application engineering, and business deployment.</p>
+    <div class="about-grid">
+      <div class="about-card">
+        <h4>&#129302; GenAI &amp; LLM Engineering</h4>
+        <ul class="bullet-list">
+          <li>LLM-powered conversational BI on GCP Vertex AI</li>
+          <li>Gemini 2.5 Pro with GCS-backed JSON data models</li>
+          <li>Natural language to SQL across multi-database environments</li>
+        </ul>
+      </div>
+      <div class="about-card v2">
+        <h4>&#9881;&#65039; Production MLOps</h4>
+        <ul class="bullet-list">
+          <li>End-to-end ML pipelines from research to production</li>
+          <li>Docker, Airflow DAGs, GCP Vertex AI, AWS EC2</li>
+          <li>Continuous retraining and model monitoring at scale</li>
+        </ul>
+      </div>
+      <div class="about-card">
+        <h4>&#128200; Business Impact Focus</h4>
+        <ul class="bullet-list">
+          <li>80%+ forecast error reduction in live sales systems</li>
+          <li>5.3% direct revenue increase via predictive forecasting</li>
+          <li>Production systems scoring 100,000+ records continuously</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- IMPACT METRICS -->
+  <div class="section">
+    <h2>&#128200; Business Impact &amp; Metrics</h2>
+    <div class="impact-grid">
+      <div class="impact-card"><div class="i-val">&gt;80%</div><div class="i-label">Forecast Error Reduction</div></div>
+      <div class="impact-card"><div class="i-val">+5.3%</div><div class="i-label">Direct Sales Increase</div></div>
+      <div class="impact-card"><div class="i-val">100K+</div><div class="i-label">Leads Scored in Production</div></div>
+      <div class="impact-card"><div class="i-val">90%</div><div class="i-label">Clinical Detection Accuracy</div></div>
+      <div class="impact-card"><div class="i-val">3</div><div class="i-label">BigQuery DBs on Single Chat Interface</div></div>
+      <div class="impact-card"><div class="i-val">5+</div><div class="i-label">End-to-End Production Deployments</div></div>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="section">
+    <h2>&#128640; Featured Projects</h2>
+
+    <div class="project-card">
+      <span class="project-status pre">Pre-Production &middot; Prompt Evaluation in Progress</span>
+      <h3>&#129302; Conversational LLM-Powered Business Intelligence System</h3>
+      <p class="project-sub">GenAI / LLM Application &nbsp;&middot;&nbsp; Natural Language &rarr; Instant Data Insights &nbsp;&middot;&nbsp; Gemini 2.5 Pro on GCP Vertex AI</p>
+      <div class="tech-tags">
+        <span class="tech-tag">Gemini 2.5 Pro / Flash</span>
+        <span class="tech-tag">GCP Vertex AI</span>
+        <span class="tech-tag">BigQuery</span>
+        <span class="tech-tag">FastAPI</span>
+        <span class="tech-tag">GCS &middot; JSON Data Models</span>
+        <span class="tech-tag">Python</span>
+      </div>
+      <div class="project-meta">
+        <div class="project-meta-row"><strong>Innovation:</strong> GCS-backed JSON data models enable Gemini 2.5 to understand 3 BigQuery databases and generate accurate cross-dataset SQL from plain English queries</div>
+        <div class="project-meta-row"><strong>Impact:</strong> Zero SQL knowledge required. Business users query all 3 databases and data models directly from a single chat interface</div>
+      </div>
+      <a href="https://sagar61205.github.io/Conversational-LLM-Powered-Business-Intelligence-System/" class="btn">Explore Case Study &rarr;</a>
+    </div>
+
+    <div class="project-card v2">
+      <span class="project-status">Production &middot; Live on GCP Vertex AI</span>
+      <h3>&#127919; MLOps Sales Pipeline Intelligence System</h3>
+      <p class="project-sub">Production MLOps &nbsp;&middot;&nbsp; Sequence Modelling &nbsp;&middot;&nbsp; &gt;80% Forecast Error Reduction</p>
+      <div class="tech-tags">
+        <span class="tech-tag">Hidden Markov Model</span>
+        <span class="tech-tag">GCP Vertex AI</span>
+        <span class="tech-tag">Apache Airflow</span>
+        <span class="tech-tag">Docker</span>
+        <span class="tech-tag">Salesforce</span>
+        <span class="tech-tag">BigQuery</span>
+        <span class="tech-tag">Python</span>
+      </div>
+      <div class="project-meta">
+        <div class="project-meta-row"><strong>Innovation:</strong> Hidden Markov Models capture temporal stage transition sequences to generate 12-month advance closure probability signals that static models miss entirely</div>
+        <div class="project-meta-row"><strong>Impact:</strong> 80% forecast error reduction, 5x more accurate than experienced sales reps, continuously scoring 100,000+ leads in production on GCP Vertex AI</div>
+      </div>
+      <a href="https://sagar61205.github.io/MLOps-based-Sales-Pipeline-Intelligence-System/" class="btn">Explore Case Study &rarr;</a>
+    </div>
+
+    <div class="project-card">
+      <span class="project-status">Production &middot; Live on AWS EC2</span>
+      <h3>&#128202; AI-Powered Sales Forecasting Engine</h3>
+      <p class="project-sub">Time-Series Forecasting &nbsp;&middot;&nbsp; +5.3% Sales Increase &nbsp;&middot;&nbsp; 60% Forecast Error Reduction</p>
+      <div class="tech-tags">
+        <span class="tech-tag">ARIMA &amp; SARIMAX</span>
+        <span class="tech-tag">PyCaret</span>
+        <span class="tech-tag">Flask</span>
+        <span class="tech-tag">Docker</span>
+        <span class="tech-tag">AWS EC2</span>
+        <span class="tech-tag">Python &middot; Pandas</span>
+        <span class="tech-tag">Statsmodels</span>
+      </div>
+      <div class="project-meta">
+        <div class="project-meta-row"><strong>Innovation:</strong> ARIMA/SARIMAX models trained on 10 years of pharmaceutical data with per-supplier seasonality profiling and COVID anomaly period isolation</div>
+        <div class="project-meta-row"><strong>Impact:</strong> 5.3% direct sales increase, MAE reduced from 10-15% to 4-6%, plus actionable supplier margin intelligence for procurement decisions</div>
+      </div>
+      <a href="https://sagar61205.github.io/Sales-forecast/" class="btn">Explore Case Study &rarr;</a>
+    </div>
+
+    <div class="project-card v2">
+      <span class="project-status">Deployed &middot; Live on AWS EC2</span>
+      <h3>&#127973; AI-Powered Thyroid Clinical Decision System</h3>
+      <p class="project-sub">Healthcare AI &nbsp;&middot;&nbsp; Explainable ML &nbsp;&middot;&nbsp; 90% Detection Accuracy &nbsp;&middot;&nbsp; 0.9 ROC-AUC</p>
+      <div class="tech-tags">
+        <span class="tech-tag">XGBoost</span>
+        <span class="tech-tag">Random Forest</span>
+        <span class="tech-tag">KNN</span>
+        <span class="tech-tag">SMOTE</span>
+        <span class="tech-tag">scikit-learn</span>
+        <span class="tech-tag">Flask</span>
+        <span class="tech-tag">Docker</span>
+        <span class="tech-tag">AWS EC2</span>
+      </div>
+      <div class="project-meta">
+        <div class="project-meta-row"><strong>Innovation:</strong> Explainable classifier surfaces top contributing clinical markers alongside every prediction, giving clinicians the transparency to validate the AI recommendation before acting on it</div>
+        <div class="project-meta-row"><strong>Impact:</strong> 90% detection accuracy, 0.9 ROC-AUC, 40% improvement over previous diagnostic methods, 10% faster diagnosis</div>
+      </div>
+      <a href="https://sagar61205.github.io/Thyroid-detection/" class="btn">Explore Case Study &rarr;</a>
+    </div>
+
+  </div>
+
+  <!-- TECHNICAL STACK -->
+  <div class="section">
+    <h2>&#128295;&#65039; Technical Stack</h2>
+    <div class="skills-grid">
+
+      <div class="skill-cat">
+        <h4>&#129302; GenAI &amp; LLM Engineering</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">Gemini 2.5 Pro / Flash</span>
+          <span class="skill-tag">GCP Vertex AI</span>
+          <span class="skill-tag">LLM Prompt Engineering</span>
+          <span class="skill-tag">Text-to-SQL</span>
+          <span class="skill-tag">JSON Data Models</span>
+          <span class="skill-tag">GCS Bucket</span>
+          <span class="skill-tag">FastAPI</span>
+          <span class="skill-tag">RAG Patterns</span>
+          <span class="skill-tag">Context Window Management</span>
+        </div>
+      </div>
+
+      <div class="skill-cat v2">
+        <h4>&#9881;&#65039; MLOps &amp; Production Infrastructure</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">GCP Vertex AI</span>
+          <span class="skill-tag">AWS EC2</span>
+          <span class="skill-tag">Docker</span>
+          <span class="skill-tag">Apache Airflow</span>
+          <span class="skill-tag">BigQuery</span>
+          <span class="skill-tag">CI/CD Pipelines</span>
+          <span class="skill-tag">REST APIs</span>
+          <span class="skill-tag">Flask</span>
+          <span class="skill-tag">Model Monitoring</span>
+          <span class="skill-tag">Continuous Retraining</span>
+        </div>
+      </div>
+
+      <div class="skill-cat">
+        <h4>&#129504; Machine Learning &amp; Modelling</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">Hidden Markov Models</span>
+          <span class="skill-tag">XGBoost</span>
+          <span class="skill-tag">Random Forest</span>
+          <span class="skill-tag">ARIMA &amp; SARIMAX</span>
+          <span class="skill-tag">scikit-learn</span>
+          <span class="skill-tag">PyCaret</span>
+          <span class="skill-tag">SMOTE</span>
+          <span class="skill-tag">Time-Series Forecasting</span>
+          <span class="skill-tag">Sequence Modelling</span>
+          <span class="skill-tag">Explainable AI</span>
+        </div>
+      </div>
+
+      <div class="skill-cat v2">
+        <h4>&#128202; Data Engineering &amp; Analytics</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Pandas &amp; NumPy</span>
+          <span class="skill-tag">SQL &amp; BigQuery</span>
+          <span class="skill-tag">Salesforce</span>
+          <span class="skill-tag">Matplotlib &amp; Seaborn</span>
+          <span class="skill-tag">Plotly</span>
+          <span class="skill-tag">Statsmodels</span>
+          <span class="skill-tag">Feature Engineering</span>
+          <span class="skill-tag">Jupyter Notebook</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="section" id="contact">
+    <h2>&#128231; Get In Touch</h2>
+    <div class="contact-grid">
+
+      <div class="contact-links">
+        <a href="https://linkedin.com/in/sagar-virmani/" target="_blank" class="contact-link">
+          <span class="c-icon">&#128188;</span>
+          <div><div class="c-label">LinkedIn</div><div class="c-val">linkedin.com/in/sagar-virmani</div></div>
         </a>
-        <a href="https://github.com/sagar61205">
-          <img src="https://img.shields.io/badge/💻_GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
+        <a href="https://github.com/sagar61205" target="_blank" class="contact-link">
+          <span class="c-icon">&#128187;</span>
+          <div><div class="c-label">GitHub</div><div class="c-val">github.com/sagar61205</div></div>
         </a>
-        <a href="#contact">
-          <img src="https://img.shields.io/badge/📧_Contact-00C851?style=for-the-badge" alt="Email">
+        <a href="mailto:sagar61205@gmail.com" class="contact-link">
+          <span class="c-icon">&#9993;&#65039;</span>
+          <div><div class="c-label">Email</div><div class="c-val">sagar61205@gmail.com</div></div>
         </a>
-        <a href="/cdn-cgi/l/email-protection#c2b1a3a5a3b0f4f3f0f2f782a5afa3abaeeca1adaf">
-          <img src="https://img.shields.io/badge/✉️_Email_Direct-D14836?style=for-the-badge" alt="Direct Email">
-        </a>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="section">
-      <h2>🌟 About Me</h2>
-      <p>Data Scientist with <strong>4+ years</strong> of experience building <strong>revenue-driving ML systems</strong> through scalable MLOps infrastructure. I specialize in <strong>production-grade AI solutions</strong> that transform complex data into measurable business growth and direct financial impact.</p>
-    </section>
-
-    <!-- Business Impact -->
-    <section class="section">
-      <h2>📈 Business Impact & Metrics</h2>
-      <div class="table-container">
-        <table>
-          <tr>
-            <th>Metric</th>
-            <th>Achievement</th>
-            <th>Impact Level</th>
-          </tr>
-          <tr>
-            <td><strong>GenAI Self-Serve Data Access</strong></td>
-            <td><strong>3 databases, 0 SQL required</strong></td>
-            <td>🟢 Operational Efficiency</td>
-          </tr>
-          <tr>
-            <td><strong>Sales Increment</strong></td>
-            <td><strong>+5.3% improvement</strong></td>
-            <td>🟢 Direct Revenue</td>
-          </tr>
-          <tr>
-            <td><strong>Manual Effort Reduction</strong></td>
-            <td><strong>20% decrease</strong></td>
-            <td>🟡 Operational Efficiency</td>
-          </tr>
-          <tr>
-            <td><strong>Forecast Error Reduction</strong></td>
-            <td><strong>>80% reduction</strong></td>
-            <td>🟢 Strategic Planning</td>
-          </tr>
-          <tr>
-            <td><strong>Customer Churn Reduction</strong></td>
-            <td><strong>31% reduction</strong></td>
-            <td>🔴 Retention Critical</td>
-          </tr>
-          <tr>
-            <td><strong>Model Accuracy</strong></td>
-            <td><strong>86% prediction accuracy</strong></td>
-            <td>🟢 Production Reliability</td>
-          </tr>
-          <tr>
-            <td><strong>Production Deployments</strong></td>
-            <td><strong>5+ end-to-end systems</strong></td>
-            <td>🟡 Scalable Infrastructure</td>
-          </tr>
-        </table>
-      </div>
-    </section>
-
-    <!-- Projects -->
-    <section class="section">
-      <h2>🚀 Featured Projects</h2>
-      
-      <div class="project">
-        <h3>🤖 Conversational LLM-Powered Business Intelligence System</h3>
-        <p><strong>GenAI / LLM Application | Natural Language → Instant Data Insights  | Gemini 2.5 Pro on GCP Vertex AI</strong></p>
-        <div class="tech-tags">
-          <span class="tech-tag"><strong>Gemini 2.5 Pro / Flash</strong></span>
-          <span class="tech-tag"><strong>GCP Vertex AI</strong></span>
-          <span class="tech-tag"><strong>BigQuery</strong></span>
-          <span class="tech-tag"><strong>FastAPI</strong></span>
-          <span class="tech-tag"><strong>GCS · JSON Data Models</strong></span>
-          <span class="tech-tag"><strong>Python</strong></span>
+        <div class="contact-link" style="cursor:default;border-left-color:#764ba2;">
+          <span class="c-icon">&#127758;</span>
+          <div><div class="c-label">Availability</div><div class="c-val">Open to opportunities worldwide</div></div>
         </div>
-        <p><strong>💡 Innovation:</strong> <strong>GCS-backed JSON data models</strong> enable Gemini 2.5 to understand 3 major BigQuery databases and generate accurate cross-dataset results</p>
-        <p><strong>📊 Impact:</strong> <strong>Zero SQL knowledge required</strong> → Business stakeholders query all 3 databases and data models directly from a chat interface</p>
-        <p><strong>🏆 Status:</strong> <strong>Pre-production</strong> — pipeline validated end-to-end, prompt evaluation in progress</p>
-        <a href="https://sagar61205.github.io/Conversational-LLM-Powered-Business-Intelligence-System/" class="btn">Explore Case Study →</a>
       </div>
 
-      <div class="project">
-        <h3>🎯 MLOps-based Sales Pipeline Intelligence System</h3>
-        <p><strong>Production MLOps System: Advanced Sequence Modeling | >80% Forecast Error Reduction</strong></p>
-        <div class="tech-tags">
-          <span class="tech-tag"><strong>Python, Pandas</strong></span>
-          <span class="tech-tag"><strong>NitroDx, Airflow</strong></span>
-          <span class="tech-tag"><strong>MLOps: GCP Vertex AI and BigQuery</strong></span>
-          <span class="tech-tag"><strong>Hidden Markov Model</strong></span>
-          <span class="tech-tag"><strong>Salesforce</strong></span>
-          <span class="tech-tag"><strong>Git, Jupyter Notebook, VS Code</strong></span>
-        </div>
-        <p><strong>💡 Innovation:</strong> <strong>Hidden Markov Models</strong> for 12-month advance signals and temporal pattern recognition</p>
-        <p><strong>📊 Impact:</strong> <strong>15% higher forecast accuracy</strong> → <strong>Better revenue planning</strong></p>
-        <p><strong>🏆 Achievement:</strong> Reduced forecast errors by <strong>>80%</strong></p>
-        <a href="https://sagar61205.github.io/MLOps-based-Sales-Pipeline-Intelligence-System/" class="btn">Explore Case Study →</a>
-      </div>
-
-      <div class="project">
-        <h3>📊 AI-Powered Sales Forecasting Engine</h3>
-        <p><strong>Time-Series Forecasting System | 5.3% Sales Boost by Deploying Predictive Sales Forecasting Model</strong></p>
-        <div class="tech-tags">
-          <span class="tech-tag"><strong>Python, Pandas</strong></span>
-          <span class="tech-tag"><strong>ARIMA, SARIMAX</strong></span>
-          <span class="tech-tag"><strong>PyCaret</strong></span>
-          <span class="tech-tag"><strong>Time-Series</strong></span>
-          <span class="tech-tag"><strong>Git, Jupyter Notebook, VS Code</strong></span>
-        </div>
-        <p><strong>💡 Innovation:</strong> <strong>ARIMA and SARIMAX</strong> for 12-month forecast utilizing 10 years of sales data</p>
-        <p><strong>📊 Impact:</strong> <strong>5.3% sales boost</strong> → <strong>Optimal resource allocation</strong></p>
-        <p><strong>🏆 Achievement:</strong> <strong>Reduced forecasting error by 60% on average</strong> through better targeting and parameter tuning</p>
-        <a href="https://sagar61205.github.io/Sales-forecast/" class="btn">Explore Case Study →</a>
-      </div>
-
-      <div class="project">
-        <h3>🏥 Clinical Decision Support System</h3>
-        <p><strong>Interpretable AI | 90% Detection Accuracy</strong></p>
-        <div class="tech-tags">
-          <span class="tech-tag"><strong>Python, Pandas</strong></span>
-          <span class="tech-tag"><strong>KNN, XGBoost and Random Forest</strong></span>
-          <span class="tech-tag"><strong>scikit-learn</strong></span>
-          <span class="tech-tag"><strong>Flask</strong></span>
-          <span class="tech-tag"><strong>AWS EC2 Instance</strong></span>
-          <span class="tech-tag"><strong>Imbalanced-Learn: SMOTE</strong></span>
-          <span class="tech-tag"><strong>Healthcare AI</strong></span>
-        </div>
-        <p><strong>💡 Innovation:</strong> <strong>Explainable classifier</strong> with full model transparency</p>
-        <p><strong>📊 Impact:</strong> <strong>40% increase</strong> in diagnostic accuracy against previously used methods</p>
-        <p><strong>🏆 Achievement:</strong> <strong>10% faster, more reliable treatment decisions</strong></p>
-        <a href="https://sagar61205.github.io/Thyroid-detection/" class="btn">Explore Case Study →</a>
-      </div>
-    </section>
-
-    <!-- Technical Skills -->
-    <section class="section">
-      <h2>🛠 Technical Excellence</h2>
-      <div class="table-container">
-        <table>
-          <tr>
-            <th>Category</th>
-            <th>Expertise</th>
-            <th>Tools & Technologies</th>
-          </tr>
-          <tr>
-            <td><strong>🤖 Machine Learning</strong></td>
-            <td>Advanced</td>
-            <td>Scikit-learn, XGBoost, HMM, Time Series, Deep Learning</td>
-          </tr>
-          <tr>
-            <td><strong>⚙️ MLOps & DevOps</strong></td>
-            <td>Production</td>
-            <td>GCP:Vertex AI, AWS:EC2 Instance, Kubernetes, Docker, Airflow, CI/CD</td>
-          </tr>
-          <tr>
-            <td><strong>📊 Analytics</strong></td>
-            <td>Expert</td>
-            <td>Python-Pandas, NumPy, Matplotlib, Seaborn, scikit-learn</td>
-          </tr>
-        </table>
-      </div>
-    </section>
-         
-    <!-- Contact Form -->
-    <section class="section" id="contact">
-      <h2>📧 Get In Touch</h2>
-      
-      <div class="direct-email">
-        <p>Prefer to email directly? <a href="/cdn-cgi/l/email-protection#7407151315064245464441341319151d185a171b19"><span class="__cf_email__" data-cfemail="215240464053171013111461464c40484d0f424e4c">[email&#160;protected]</span></a></p>
-      </div>
-
-      <div class="contact-form">
-        <div class="success-message" id="successMessage">
-          ✅ Thank you for your message! I'll get back to you soon at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="81f2e0e6e0f3b7b0b3b1b4c1e6ece0e8edafe2eeec">[email&#160;protected]</a>.
-        </div>
-        <div class="error-message" id="errorMessage">
-          ❌ There was an error sending your message. Please email me directly at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d7a4b6b0b6a5e1e6e5e7e297b0bab6bebbf9b4b8ba">[email&#160;protected]</a>
-        </div>
-        
+      <div class="contact-form-wrap">
+        <div class="success-msg" id="successMessage">Thank you for your message. I will get back to you shortly.</div>
+        <div class="error-msg"   id="errorMessage">Something went wrong. Please email me directly at sagar61205@gmail.com</div>
         <form id="contactForm" action="https://formspree.io/f/myznzwrq" method="POST">
-        <input type="hidden" name="_subject" value="New message from Portfolio Contact Form">
+          <input type="hidden" name="_subject" value="New message from Portfolio">
           <div class="form-group">
             <label for="name">Your Name</label>
             <input type="text" id="name" name="name" required>
@@ -481,23 +723,34 @@
             <input type="text" id="subject" name="subject" required>
           </div>
           <div class="form-group">
-            <label for="message">Your Message</label>
+            <label for="message">Message</label>
             <textarea id="message" name="message" required></textarea>
           </div>
           <button type="submit" class="btn">Send Message</button>
         </form>
       </div>
-    </section>
 
-    <footer>
-      <p><strong>🌍 Open to opportunities worldwide</strong> | <strong>💼 Available for full-time & contract roles</strong></p>
-      <p style="margin-top: 20px;">📧 <strong>Email:</strong> <a href="/cdn-cgi/l/email-protection#364557515744000704060376515b575f5a1855595b"><span class="__cf_email__" data-cfemail="681b090f091a5e595a585d280f05090104460b0705">[email&#160;protected]</span></a></p>
-    </footer> 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-      const form = document.getElementById('contactForm');
-      const successMessage = document.getElementById('successMessage');
-      const errorMessage = document.getElementById('errorMessage');
+    </div>
+  </div>
 
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const formData = new FormData(form
+  <footer>
+    <p><strong>&#127758; Open to opportunities worldwide</strong> &nbsp;&middot;&nbsp; <strong>&#128188; Available for full-time &amp; contract roles</strong></p>
+    <p style="margin-top:12px;">&#9993;&#65039; <a href="mailto:sagar61205@gmail.com">sagar61205@gmail.com</a></p>
+  </footer>
+
+</div>
+<script>
+  const form = document.getElementById('contactForm');
+  const successMsg = document.getElementById('successMessage');
+  const errorMsg   = document.getElementById('errorMessage');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    try {
+      const r = await fetch(form.action, { method:'POST', body: new FormData(form), headers: {'Accept':'application/json'} });
+      if (r.ok) { successMsg.style.display='block'; errorMsg.style.display='none'; form.reset(); }
+      else       { errorMsg.style.display='block';   successMsg.style.display='none'; }
+    } catch { errorMsg.style.display='block'; successMsg.style.display='none'; }
+  });
+</script>
+</body>
+</html>
