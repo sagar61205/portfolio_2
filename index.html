@@ -419,6 +419,7 @@
     .project-sub { font-size: 0.83rem; color: #667eea; font-weight: 600; margin-bottom: 14px; }
     .project-status { display: inline-block; background: #f0fdf4; border: 1px solid #bbf7d0; color: #15803d; font-size: 0.72rem; font-weight: 700; padding: 3px 10px; border-radius: 12px; margin-bottom: 12px; letter-spacing: 0.03em; }
     .project-status.pre { background: #eff6ff; border-color: #bfdbfe; color: #1d4ed8; }
+    .project-status.validated { background: #fefce8; border-color: #fde68a; color: #b45309; }
     .project-meta { display: flex; flex-direction: column; gap: 7px; margin: 14px 0 18px; }
     .project-meta-row { font-size: 0.86rem; color: #555; line-height: 1.5; }
     .project-meta-row strong { color: #2c3e50; }
@@ -488,7 +489,7 @@
       <div class="about-card">
         <h4>&#129302; GenAI &amp; LLM Engineering</h4>
         <ul class="bullet-list">
-          <li>LLM-powered conversational BI on GCP Vertex AI</li>
+          <li>LLM-powered conversational BI on GCP Vertex AI with MCP server layer — 85–90% accuracy validated</li>
           <li>Gemini 2.5 Pro with GCS-backed JSON data models</li>
           <li>Natural language to SQL across multi-database environments</li>
         </ul>
@@ -530,20 +531,22 @@
     <h2>&#128640; Featured Projects</h2>
 
     <div class="project-card">
-      <span class="project-status pre">Pre-Production &middot; Prompt Evaluation in Progress</span>
+      <span class="project-status validated">Built &amp; Accuracy-Validated &middot; 85–90% Accuracy &middot; Deployment Pending</span>
       <h3>&#129302; Conversational LLM-Powered Business Intelligence System</h3>
-      <p class="project-sub">GenAI / LLM Application &nbsp;&middot;&nbsp; Natural Language &rarr; Instant Data Insights &nbsp;&middot;&nbsp; Gemini 2.5 Pro on GCP Vertex AI</p>
+      <p class="project-sub">GenAI / LLM Application &nbsp;&middot;&nbsp; Natural Language &rarr; Instant Data Insights &nbsp;&middot;&nbsp; Gemini 2.5 Flash &amp; Pro on GCP Vertex AI &nbsp;&middot;&nbsp; MCP Server Layer</p>
       <div class="tech-tags">
         <span class="tech-tag">Gemini 2.5 Pro / Flash</span>
         <span class="tech-tag">GCP Vertex AI</span>
         <span class="tech-tag">BigQuery</span>
         <span class="tech-tag">FastAPI</span>
+        <span class="tech-tag">MCP Server Layer</span>
         <span class="tech-tag">GCS &middot; JSON Data Models</span>
         <span class="tech-tag">Python</span>
       </div>
       <div class="project-meta">
-        <div class="project-meta-row"><strong>Innovation:</strong> GCS-backed JSON data models enable Gemini 2.5 to understand 3 BigQuery databases and generate accurate cross-dataset SQL from plain English queries</div>
-        <div class="project-meta-row"><strong>Impact:</strong> Zero SQL knowledge required. Business users query all 3 databases and data models directly from a single chat interface</div>
+        <div class="project-meta-row"><strong>Innovation:</strong> MCP server layer intercepts all LLM tool calls before BigQuery execution, validating SQL field names and blocking hallucinated identifiers. GCS-backed JSON data models encode cross-database schema relationships and business semantics across 3 BigQuery datasets.</div>
+        <div class="project-meta-row"><strong>Accuracy:</strong> 85–90% achieved across Gemini 2.5 Flash and Pro on a representative business query set. Flash validated for production-scale deployment at lower cost without meaningful accuracy loss.</div>
+        <div class="project-meta-row"><strong>Impact:</strong> Zero SQL knowledge required. Business users query all 3 databases from a single chat interface. System built and validated on GCP Vertex AI — deployment in progress.</div>
       </div>
       <a href="https://sagar61205.github.io/Conversational-LLM-Powered-Business-Intelligence-System/" class="btn">Explore Case Study &rarr;</a>
     </div>
