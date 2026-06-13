@@ -598,20 +598,31 @@
     </div>
 
     <div class="project-card">
-      <span class="project-status">Production &middot; Live on AWS EC2</span>
+      <span class="project-status">Production &middot; SLA-Based Quarterly Delivery &middot; GCP</span>
       <h3>&#128202; AI-Powered Sales Forecasting Engine</h3>
       <p class="project-sub">Time-Series Forecasting &nbsp;&middot;&nbsp; +5.3% Sales Increase &nbsp;&middot;&nbsp; 60% Forecast Error Reduction</p>
       <div class="tech-tags">
         <span class="tech-tag">ARIMA &amp; SARIMAX</span>
         <span class="tech-tag">PyCaret</span>
-        <span class="tech-tag">Flask</span>
-        <span class="tech-tag">Docker</span>
-        <span class="tech-tag">AWS EC2</span>
+        <span class="tech-tag">GCP</span>
         <span class="tech-tag">Python &middot; Pandas</span>
         <span class="tech-tag">Statsmodels</span>
       </div>
+
+      <!-- Architecture teaser -->
+      <div style="background:#f5f3ff;border-radius:10px;padding:16px 20px;margin:16px 0;border-left:4px solid #667eea;">
+        <div style="font-size:0.78rem;font-weight:700;color:#667eea;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:10px;">How it works</div>
+        <div style="font-size:0.84rem;color:#444;line-height:1.7;">
+          Top 10 suppliers analysed across 10 years of pharmaceutical sales data &rarr;
+          <strong>ARIMA/SARIMAX</strong> models trained per supplier, with order parameter tuning to correct historical anomalies and capture seasonality patterns &rarr;
+          automated <strong>back-testing and evaluation</strong> across model configurations via PyCaret &rarr;
+          12-month forecasts generated for top 3 suppliers on <strong>GCP</strong> under quarterly SLA &rarr;
+          outputs delivered with <strong>supplier margin intelligence</strong> for procurement and commercial decisions.
+        </div>
+      </div>
+
       <div class="project-meta">
-        <div class="project-meta-row"><strong>Innovation:</strong> ARIMA/SARIMAX models trained on 10 years of pharmaceutical data with per-supplier seasonality profiling and COVID anomaly period isolation</div>
+        <div class="project-meta-row"><strong>Innovation:</strong> ARIMA/SARIMAX models trained per supplier on 10 years of pharmaceutical data; ARIMA order tuning corrected historical anomalies distorting forecasts, SARIMAX captured supplier-specific seasonality patterns</div>
         <div class="project-meta-row"><strong>Impact:</strong> 5.3% direct sales increase, MAE reduced from 10-15% to 4-6%, plus actionable supplier margin intelligence for procurement decisions</div>
       </div>
       <a href="https://sagar61205.github.io/Sales-forecast/" class="btn">Explore Case Study &rarr;</a>
