@@ -497,9 +497,9 @@
       <div class="about-card v2">
         <h4>&#9881;&#65039; Production MLOps</h4>
         <ul class="bullet-list">
-          <li>End-to-end ML pipelines from research to production</li>
-          <li>Docker, Airflow DAGs, GCP Vertex AI, AWS EC2</li>
-          <li>Continuous retraining and model monitoring at scale</li>
+          <li>End-to-end ML pipelines from research to production under SLA</li>
+          <li>Docker, Airflow DAGs, MLflow, GCP Vertex AI, AWS EC2, CI/CD</li>
+          <li>Drift monitoring, automated alerting, governance documentation, rollback capability</li>
         </ul>
       </div>
       <div class="about-card">
@@ -534,6 +534,19 @@
       <span class="project-status validated">Built &amp; Accuracy-Validated &middot; 85–90% Accuracy</span>
       <h3>&#129302; Conversational LLM-Powered Business Intelligence System</h3>
       <p class="project-sub">GenAI / LLM Application &nbsp;&middot;&nbsp; Natural Language &rarr; Instant Data Insights &nbsp;&middot;&nbsp; Gemini 2.5 Flash &amp; Pro on GCP Vertex AI &nbsp;&middot;&nbsp; MCP Server Layer</p>
+
+      <!-- Architecture teaser -->
+      <div style="background:#f5f3ff;border-radius:10px;padding:16px 20px;margin:16px 0;border-left:4px solid #667eea;">
+        <div style="font-size:0.78rem;font-weight:700;color:#667eea;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:10px;">How it works</div>
+        <div style="font-size:0.84rem;color:#444;line-height:1.7;">
+          User query enters via enterprise frontend &rarr; <strong>FastAPI</strong> orchestrates all ingress and egress &rarr;
+          <strong>Intent classifier</strong> routes to deterministic SQL templates or <strong>Gemini 2.5 Flash</strong> for dynamic generation &rarr;
+          <strong>MCP layer</strong> enforces responsible AI controls and loads GCS data models &rarr;
+          <strong>BigQuery</strong> executes SQL across 3 enterprise databases &rarr;
+          <strong>Gemini Answer</strong> converts the output table into a natural language response returned to the frontend.
+        </div>
+      </div>
+
       <div class="tech-tags">
         <span class="tech-tag">Gemini 2.5 Pro / Flash</span>
         <span class="tech-tag">GCP Vertex AI</span>
@@ -564,6 +577,19 @@
         <span class="tech-tag">BigQuery</span>
         <span class="tech-tag">Python</span>
       </div>
+
+      <!-- Architecture teaser -->
+      <div style="background:#f5f3ff;border-radius:10px;padding:16px 20px;margin:16px 0;border-left:4px solid #764ba2;">
+        <div style="font-size:0.78rem;font-weight:700;color:#764ba2;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:10px;">How it works</div>
+        <div style="font-size:0.84rem;color:#444;line-height:1.7;">
+          <strong>Salesforce</strong> stage progression data is extracted and filtered for directional transitions &rarr;
+          <strong>HMM</strong> models each deal as a sequence of hidden states to generate closure probability signals &rarr;
+          pipeline containerised in <strong>Docker</strong> with train, evaluate, and score CLI commands &rarr;
+          <strong>Airflow DAGs</strong> orchestrate scheduling and pipeline execution on <strong>GCP Vertex AI</strong> &rarr;
+          scores written to <strong>BigQuery</strong> with full governance documentation, audit trail, and rollback capability.
+        </div>
+      </div>
+
       <div class="project-meta">
         <div class="project-meta-row"><strong>Innovation:</strong> Hidden Markov Models capture temporal stage transition sequences to generate 12-month advance closure probability signals that static models miss entirely</div>
         <div class="project-meta-row"><strong>Impact:</strong> 80% forecast error reduction, 5x more accurate than experienced sales reps, continuously scoring 100,000+ leads in production on GCP Vertex AI</div>
@@ -629,7 +655,9 @@
           <span class="skill-tag">JSON Data Models</span>
           <span class="skill-tag">GCS Bucket</span>
           <span class="skill-tag">FastAPI</span>
-          <span class="skill-tag">RAG Patterns</span>
+          <span class="skill-tag">RAG Pipelines</span>
+          <span class="skill-tag">LangChain</span>
+          <span class="skill-tag">HuggingFace Transformers</span>
           <span class="skill-tag">Context Window Management</span>
         </div>
       </div>
@@ -643,8 +671,9 @@
           <span class="skill-tag">Apache Airflow</span>
           <span class="skill-tag">BigQuery</span>
           <span class="skill-tag">CI/CD Pipelines</span>
-          <span class="skill-tag">Model Monitoring</span>
-          <span class="skill-tag">Continuous Retraining</span>
+          <span class="skill-tag">MLflow</span>
+          <span class="skill-tag">Drift Monitoring &amp; Alerting</span>
+          <span class="skill-tag">Model Governance</span>
         </div>
       </div>
 
